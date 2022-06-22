@@ -1,0 +1,95 @@
+body{
+    background-color: #E4e6eb;
+    font-family: 'Assistant', sans-serif;
+    color: #76B778;
+}
+
+
+//navbar
+.navbar-brand{
+    img {
+        max-height: 40px;
+    }
+}
+
+.navbar-light{
+    .navbar-nav{
+        .nav-link{
+            color: #76B778;
+
+            &.active{
+                font-weight: bold;
+                color: #76B778 !important;
+            }
+
+            &:hover{
+                color: #38793b !important;
+            }
+        }
+    }
+}
+
+.btn-navbar-right {
+    margin-top: -10px !important;
+    margin-bottom: -8px !important;
+    margin-right: -18px !important;
+
+    height: 70px;
+    border-radius: 0;
+}
+
+.btn-login{
+    background-color: #76B778;
+    color: #ffffff;
+
+    &:hover{
+        background-color: #6ADC6E;
+        color: #ffffffbb;
+    }
+}
+
+
+// header
+header{
+    padding: 180px 0 165px;
+    margin-top: -70px;
+    background-image: url('../images/Group\ 6.jpg');
+    background-size: cover;
+
+    h1, p{
+        
+        color: #ffffff;
+        
+
+    }
+
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 20px;
+    }
+    .btn-get-started{
+        background-color: #f04efff6;
+        color: #ffffff;
+        font-weight: bold;
+
+        &:hover{
+            background-color: #da6be4f6;
+            color: #ffffff;
+        }
+    }
+
+  
+        
+} 
+ 
+
+  //main
+
+.section-stats{
+    margin-top: -50px;
+    background-color: #38793b;
+}
