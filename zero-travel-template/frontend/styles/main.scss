@@ -1,5 +1,5 @@
 body{
-    background-color: #E4e6eb;
+    background-color: #ffffff;
     font-family: 'Assistant', sans-serif;
     color: #76B778;
 }
@@ -8,7 +8,7 @@ body{
 //navbar
 .navbar-brand{
     img {
-        max-height: 40px;
+        max-height: 50px;
     }
 }
 
@@ -34,7 +34,7 @@ body{
     margin-bottom: -8px !important;
     margin-right: -18px !important;
 
-    height: 70px;
+    height: 77px;
     border-radius: 0;
 }
 
@@ -52,8 +52,8 @@ body{
 // header
 header{
     padding: 180px 0 165px;
-    margin-top: -70px;
-    background-image: url('../images/Group\ 6.jpg');
+    margin-top: -79px;
+    background-image: url('../images/bg.jpg');
     background-size: cover;
 
     h1, p{
@@ -87,9 +87,459 @@ header{
 } 
  
 
-  //main
+  //main statistik
 
 .section-stats{
     margin-top: -50px;
-    background-color: #38793b;
+
+    .stats-detail{
+        padding-top: 15px;
+        background-color: #ffffff;
+        padding-left: 40px;
+    }
+
+    h2{
+        font-size: 30px;
+        margin-bottom: 0;
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: lighter;
+    }
 }
+
+//populer
+
+.section-populer {
+    min-height: 540px;
+    margin-top: -50px;
+    background-color: #76B778;
+    margin-bottom: -230px;
+
+    .section-populer-heading{
+        margin-top: 130px;
+    }
+
+   
+    h2 {
+        font-family: 'Playfair Display', serif;
+        font-weight: bold;
+        font-size: 40px;
+        color: #ffffff;
+    }
+    p {
+        color: #ffffff;
+        font-size: 18px;
+    }
+}
+
+//item populer
+.section-populer-content{
+        .section-populer-travel{
+           .card-travel{
+               min-height: 380px;
+               background-color: #8a8585;
+               color: #ffffff;
+               padding: 30px;
+               background-size: cover;
+               margin-bottom: 20px;
+           }
+
+           .travel-country{
+               font-size: 18px;
+               color: #ffffff;
+
+           }
+
+           .travel-location{
+            font-size: 26px;
+            color: #ffffff;
+
+           }
+
+        .travel-button{
+            .btn-travel-details{
+                background-color: #38793b;
+                color: #ffffff;
+
+                &:hover{
+                    background-color: #39c240;
+                color: #ffffff;
+                }
+            }
+        }
+    }
+}
+
+//partnet
+.section-networks{
+    background-color: #ffffff;
+    margin-top: -120px;
+    padding-top: 240px;
+    padding-bottom: 50px;
+
+    h2{
+        font-family: 'Playfair Display', serif;
+        font-weight: bold;
+        font-size: 40px;
+    }
+
+    p{
+        font-size: 18px;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+}
+
+.section-testimonial-heading{
+    background: linear-gradient(#fff 0%, #f7f9ff 100%);
+    padding-top: 50px;
+    min-height: 506px;
+
+    h2{
+        font-family: 'Playfair Display', serif;
+        font-weight: bold;
+        font-size: 40px;
+    }
+
+    p{
+        font-size: 18px;
+    }
+}
+
+.section-testimonial-content{
+    margin-top: -300px;
+    padding-top: 40px;
+
+    .card-testimonial{
+        padding: 40px 20px 10px;
+        border-radius: 11px;
+        margin-bottom: 20px;
+        
+
+        .testimonial-content{
+            min-height: 380px;
+
+        }
+
+        h3{
+            font-size: 22px;
+        }
+
+        .testimonial{
+            font-weight: 200;
+            font-size: 26px;
+            color: #6e6e6e;
+            min-height: 160px;
+        }
+        
+        .trip-to{
+            font-weight: normal;
+            font-optical-sizing: 21px;
+            color: #6e6e6e;
+        }
+
+        hr{
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+
+}
+
+.btn-started{
+    background-color: #f04efff6;
+    color: #ffffff;
+    font-weight: bold;
+
+    &:hover{
+        background-color: #da6be4f6;
+        color: #ffffff;
+    }
+}
+
+.btn-need-help{
+    background-color: #f2f2f2;
+    color: #c3c3c3;
+    font-weight: bold;
+
+    &:hover{
+        background-color: #da6be4f6;
+        color: #ffffff;
+    }
+}
+
+
+}
+
+.section-footer{
+    h5{
+        font-weight: bold;
+        font-size: 25px;
+    }
+    a {
+        color: #39c240;
+    }
+}
+
+.section-details-header{
+  min-height: 310px;
+  background-color: #E4E6EB;
+  margin-top: -77px;
+}
+
+.section-details-content{
+    margin-top: -210px;
+    min-height: 100vh;
+    .breadcrumb{
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+    .breadcrumb-item{
+        &.active{
+            font-weight: bold;
+            color: #38793b;
+        }
+    }
+}
+
+
+.card-details{
+    padding: 30px;
+    border-radius: 11px;
+
+    h1{
+        font-size: 26px;
+
+    }
+    h2{
+        font-size: 20px;
+    }
+
+    p{
+        font-size: 18px;
+        color: #b1b1b1;
+    }
+
+    .payment-instruction{
+        font-weight: 300;
+        font-size: 15px;
+        color: #b1b1b1;
+    }
+
+    .item-bank{
+        .description{
+            margin-left: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            float: left;
+
+            h3{
+                font-weight: 500;
+                font-size: 18px;
+                margin-bottom: 5px;
+                color: #79b47b;
+                
+             }
+     
+             p{
+                font-weight: 450;
+                 margin-bottom: 0;
+                 font-size: 15px;
+                 color: #79b47b;
+             }
+        }
+
+        .bank-image{
+            width: 45px;
+            height: 45px;
+            float: left;
+        }
+    }
+
+    .trip-informasi{
+        th{
+            font-weight: 300;
+            font-size: 18px;
+            color: #6ADC6E;
+        }
+
+        td{
+            font-weight: 300;
+            font-size: 18px;
+            color: #d1d1d1;
+        }
+    }
+
+    .checkout-informasi{
+        th{
+            font-weight: 300;
+            font-size: 15px;
+            color: #6ADC6E;
+        }
+
+        td{
+            font-weight: 300;
+            font-size: 15px;
+            color: #d1d1d1;
+        }
+
+        .harga{
+            font-weight: bold;
+            color: #76B778;
+        }
+
+        
+    }
+
+    .disct{
+        font-weight: 300;
+        font-size: 15px;
+        color: #d1d1d1;
+    }
+
+    .gallery{
+        .xzoom-container{
+            display: block;
+
+            .xzoom{
+                width: 100%;
+                box-shadow: none;
+                margin-bottom: 10px;
+
+            }
+
+            .xactive{
+                border: 10px solid #76B778;
+                box-shadow: none;
+            }
+
+            
+        }
+       
+    }
+
+
+
+}
+
+.member{
+    .member-img{
+      width: 40px;
+      height: 40px;
+    }
+    h3{
+        font-weight: 400;
+        font-size: 15px;
+        color: #39c240;
+    }
+    .gj-datepicker{
+        .datepicker{
+            border-right: none;
+
+        }
+        .input-group-append{
+            .btn{
+                padding-right: 5px;
+            }
+        }
+    }
+
+    .btn-add-now{
+        background-color: #38793b;
+        color: #fff;
+        margin-left: 10px;
+
+        &:hover{
+            background-color: #6ADC6E;
+        color: #fff;
+        }
+    }
+}
+
+
+.features{
+    margin-top: 24px;
+
+    h3{
+        font-size: 18px;
+        color: #39c240;
+        margin-bottom: 0;
+    }
+
+    p{
+        margin-bottom: 0;
+        font-size: 15px;
+
+    }
+
+    .description{
+        margin-left: 10px;
+        overflow: hidden;
+        float: left;
+    }
+
+    .featured-image{
+        width: 45px;
+        height: 45px;
+        float: left;
+    }
+
+
+}
+
+.join-container{
+    margin-top: -17px;
+}
+
+.btn-join-now{
+    background-color: #76B778;
+    color: white;
+    border-radius: 0;
+
+    &:hover{
+        background-color: #6ADC6E;
+        color: white;
+    }
+}
+
+.card-right{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.section-success{
+    height: 80vh;
+
+    h3{
+        font-weight: 600;
+        font-size: 26px;
+        color: #39c240;
+    }
+
+    p{
+        font-weight: 300;
+        font-size: 16;
+        color: #b1b1b1;
+    }
+
+    .btn-homepage{
+        border-radius: 4px;
+        background-color: #38793b;
+        color: #fff;
+
+        &:hover{
+            background-color: #62d167;
+            color: #fff;
+        }
+    }
+}
+
+
+
+
+

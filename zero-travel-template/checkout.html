@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="frontend/libraries/xzoom/xzoom.css">
+    <link rel="stylesheet" href="frontend/libraries/combined/css/gijgo.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="frontend/styles/main.css">
+
+
+    <title>Zero-Travel</title>
+
+</head>
+<body>
+
+     <!-- Navbar -->
+     <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+          <div class="navbar-nav ml-auto mr-auto mr-sm-auto mr-lg-0 mr-md-auto">
+              <a href="index.html" class="navbar-brand">
+                  <img src="frontend/images/logo-glasstea.png" alt="">
+              </a>
+          </div>
+          <ul class="navbar-nav mr-auto d-none d-lg-block">
+              <li>
+                  <span class="text-muted">
+                      | &nbsp; Beyon the explorer of the World
+                  </span>
+              </li>
+          </ul>
+        </nav>
+    </div>
+
+
+    <!-- main -->
+
+    
+    <main>
+      <section class="section-details-header"></section>
+      <section class="section-details-content">
+          <div class="container">
+              <div class="row">
+                  <div class="col pl-3">
+                      <nav>
+                          <ol class="breadcrumb">
+                              <li class="breadcrumb-item">
+                                  Paket Travel
+                              </li>
+                              <li class="breadcrumb-item">
+                                Details
+                            </li>
+                            <li class="breadcrumb-item active">
+                                Checkout
+                            </li>
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-8 pl-lg-3">
+                    <div class="card card-details">
+                        <h1>Siapa saja yang pergi?</h1>
+                        <p>Trip To Tabaria Indonesia</p>
+                        
+                     <div class="attendance">
+                         <table class="table table-responsive-sm text-center">
+                             <thead>
+                                 <tr>
+                                     <td>Picture</td>
+                                     <td>Name</td>
+                                     <td>Daerah</td>
+                                     <td>VISA</td>
+                                     <td>Passport</td>
+                                     <td></td>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <tr>
+                                     <td>
+                                         <img src="frontend/images/user_pic.jpg" alt="" width="40%">
+                                     </td>
+                                     <td class="align-middle">
+                                        Hadiid Fajar
+                                     </td>
+                                     <td class="align-middle">
+                                        Makassar
+                                     </td>
+                                     <td class="align-middle">
+                                        N/A
+                                     </td>
+                                     <td class="align-middle">
+                                        Active
+                                     </td>
+                                     <td class="align-middle">  
+                                         <a href="">
+                                             <img src="frontend/images/ic_remove.png" alt="">
+                                         </a>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                        <img src="frontend/images/user_pic.jpg" alt="" width="40%">
+                                    </td>
+                                    <td class="align-middle">
+                                       Hadiid Fajar
+                                    </td>
+                                    <td class="align-middle">
+                                       Makassar
+                                    </td>
+                                    <td class="align-middle">
+                                       N/A
+                                    </td>
+                                    <td class="align-middle">
+                                       Active
+                                    </td>
+                                    <td class="align-middle">  
+                                        <a href="">
+                                            <img src="frontend/images/ic_remove.png" alt="">
+                                        </a>
+                                    </td>
+                                </tr>
+                                 
+                             </tbody>
+                         </table>
+                     </div>
+
+                     <div class="member mt-3">
+                         <h2>Add Member</h2>
+                         <form action="" class="form-inline">
+                             <label for="inputUsername" class="sr-only">Name</label>
+                             <input name="inputUsername" type="text" class="form-control mb-2 mr-sm-2" id="inputUsername" placeholder="Username">
+
+                             <label for="inputVisa" class="sr-only">VISA</label>
+                            <select name="inputVisa" id="inputVisa" class="form-control mb-2 mr-sm-2">
+                              <option value="VISA" selected >VISA</option>
+                              <option value="30 Days">30 Hari</option>
+                              <option value="N/A">N/A</option>
+                            </select>
+
+                            <label for="inputPassport" class="sr-only">Passport</label>
+                            <div class="input-group mb-2 ">
+                                <input type="text" class="form-control datepicker" id="datepicker" placeholder="Passport">
+                            </div>
+
+                            <button type="submit" class="btn btn-add-now mb-2 px-4">
+                                 Add Now
+                            </button>
+                         </form>
+                         <h3 class="mt-2 mb-0">Note</h3>
+                         <p class="disct mb-0">
+                              Kamu hanya dapat memili teman kamu
+                         </p>
+                     </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card card-details card-right">
+                        <h2>Checkout Informasi</h2>
+                      
+                     
+                       
+                        <table class="checkout-informasi">
+                            <tr>
+                                <th width="50%">Members</th>
+                                <td width="50%" class="text-right">2 Orang</td>
+                            </tr>
+                            <tr>
+                                <th width="50%">Additional VISA</th>
+                                <td width="50%" class="text-right">Rp. 150.000</td>
+                            </tr>
+                             <tr>
+                                <th width="50%">Trip Price</th>
+                                <td width="50%" class="text-right">Rp 50 juta/Person</td>
+                             </tr>
+                               <tr>
+                                <th width="50%">Sub Total</th>
+                                <td width="50%" class="text-right">Rp. 22 juta</td>
+                               </tr>
+                               <tr>
+                                <th width="50%">Total(+Unique Code)</th>
+                                <td width="50%" class="text-right"><span class="harga"> Rp. 21 juta</span></td>
+                               </tr>
+                                
+                            
+                        </table>
+                        <hr>
+
+                            <h2>Payment Distraction</h2>
+                            <p class="payment-instruction">Please complete your payment before to 
+                                continue the wonderful trip</p>
+
+                             <div class="bank">
+                                 <div class="item-bank">
+                                     <img src="frontend/images/ic_bank.png" alt="" class="bank-image">
+                                     <div class="description">
+                                        <h3>PT. ZeroShop</h3>
+                                        <p>0881 8829 8800 <br>
+                                           Bank Central Asia
+                                       </p>
+                                     </div>
+                                    <div class="clearfix"></div>
+                                 </div>
+
+                                 <div class="item-bank">
+                                    <img src="frontend/images/ic_bank.png" alt="" class="bank-image">
+                                    <div class="description">
+                                       <h3>PT. ZeroShop</h3>
+                                       <p>0881 8829 8800 <br>
+                                          Bank Central Asia
+                                      </p>
+                                    </div>
+                                   
+                                </div>
+                                
+                             </div>   
+
+                    </div>
+                    <div class="join-container">
+                        <a href="" class="btn btn-block btn-join-now mt-3 py-2">
+                            Saya Sudah Bayar
+                        </a>
+                    </div>
+
+                    <div class="text-center mt-3">
+                          <a href="" class="text-muted">Cancel Booking</a>
+                    </div>
+                </div>
+            </div>
+
+          </div>
+
+     
+      </section>
+    </main>
+
+    <!-- footer -->
+
+    <footer class="section-footer mt-5 mb-4 border-top">
+        <div class="container pt-5 pb-5">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-lg-3">
+                            <h5>Features</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="">Reviews</a></li>
+                                <li><a href="">Community</a></li>
+                                <li><a href="">Social Media Kit</a></li>
+                                <li><a href="">Affliete</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <h5>Features</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="">Reviews</a></li>
+                                <li><a href="">Community</a></li>
+                                <li><a href="">Social Media Kit</a></li>
+                                <li><a href="">Affliete</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <h5>Features</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="">Reviews</a></li>
+                                <li><a href="">Community</a></li>
+                                <li><a href="">Social Media Kit</a></li>
+                                <li><a href="">Affliete</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <h5>Features</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="">Reviews</a></li>
+                                <li><a href="">Community</a></li>
+                                <li><a href="">Social Media Kit</a></li>
+                                <li><a href="">Affliete</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container-fluid">
+            <div class="row border-top justify-content-center align-items-center mt-2">
+                <div class="col-auto text-gray-500 font-weight-light mt-2">
+                    2022 Zeronine • All rights reserved • Made in Makasssar 
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+ <!-- JavaScript Bundle with Popper -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ <script src="frontend/libraries/xzoom/xzoom.min.js"></script>
+ <!-- <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script> -->
+ <script src="frontend/libraries/combined/js/gijgo.min.js"></script>
+
+ <script>
+     $(document).ready(function(){
+         $('.xzoom, .xzoom-gallery').xzoom({
+             zoomWidth: 500,
+             title: false,
+             tint: '#333',
+             Xoffset: 15
+         })
+
+        });
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4',
+            icons: {
+                rightIcon: '<img src="frontend/images/ic_doe.png" />'
+            }
+        });
+
+  
+  
+ </script>
+
+</body> 
+
+</html>
