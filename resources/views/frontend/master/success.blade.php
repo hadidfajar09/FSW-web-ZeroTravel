@@ -22,13 +22,10 @@
 </head>
 <body>
 
- @include('frontend.partial.navbar')
-
-  
+ @include('frontend.partial.navbar-check')
 
   @yield('content')
 
-  @include('frontend.partial.footer')
     
 
  <!-- JavaScript Bundle with Popper -->

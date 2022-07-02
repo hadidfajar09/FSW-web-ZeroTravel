@@ -22,7 +22,7 @@
 </head>
 <body>
 
- @include('frontend.partial.navbar')
+ @include('frontend.partial.navbar-check')
 
   
 

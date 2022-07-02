@@ -63,7 +63,7 @@
                             TABARIA, MAKASSAR
                         </div>
                         <div class="travel-button mt-auto">
-                            <a href="" class="btn btn-travel-details px-4">View Details</a>
+                            <a href="{{ route('detail') }}" class="btn btn-travel-details px-4">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                             TABARIA, MAKASSAR
                         </div>
                         <div class="travel-button mt-auto">
-                            <a href="" class="btn btn-travel-details px-4">View Details</a>
+                            <a href="{{ route('detail') }}" class="btn btn-travel-details px-4">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                             TABARIA, MAKASSAR
                         </div>
                         <div class="travel-button mt-auto">
-                            <a href="" class="btn btn-travel-details px-4">View Details</a>
+                            <a href="{{ route('detail') }}" class="btn btn-travel-details px-4">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                             TABARIA, MAKASSAR
                         </div>
                         <div class="travel-button mt-auto">
-                            <a href="" class="btn btn-travel-details px-4">View Details</a>
+                            <a href="{{ route('detail') }}" class="btn btn-travel-details px-4">View Details</a>
                         </div>
                     </div>
                 </div>
