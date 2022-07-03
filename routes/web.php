@@ -1,10 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\TravelController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,9 +34,21 @@ Route::get('/checkout/success', [CheckoutController::class,'successCheckout'])->
 // });
 
 Route::prefix('admin')
-        ->middleware(['auth','admin'])
         ->namespace('Admin')
+        ->middleware(['auth','admin'])
         ->group(function(){
            Route::get('/',[DashboardController::class, 'index'])->name('admin.dashboard');
+
+           //paket
+           Route::get('/paket-travel', [TravelController::class, 'index'])->name('paket.index');
+           Route::get('/paket-travel/create', [TravelController::class, 'create'])->name('paket.create');
+           Route::post('/paket-travel/store', [TravelController::class, 'store'])->name('paket.store');
+           Route::get('/paket-travel/edit/{id}', [TravelController::class, 'edit'])->name('paket.edit');
+           Route::put('/paket-travel/update/{id}', [TravelController::class, 'update'])->name('paket.update');
+           Route::delete('/paket-travel/destroy/{id}', [TravelController::class, 'destroy'])->name('paket.destroy');
+
+         // Route::resource('travel', TravelController::class);
         });
+
+      //   Route::resource('travel', TravelController::class);
 
