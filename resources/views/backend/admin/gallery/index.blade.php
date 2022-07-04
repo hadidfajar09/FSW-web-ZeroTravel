@@ -1,7 +1,7 @@
 @extends('backend.master.admin')
 
 @section('title')
-    Paket Travel
+    Galeri
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Paket Travel</h1>
-        <a href="{{ route('paket.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+        <h1 class="h3 mb-0 text-gray-800">Galeri</h1>
+        <a href="{{ route('gallery.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-plus fa-sm text-white-50"></i> Tambah</a>
     </div>
 
@@ -24,11 +24,8 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Title</th>
-                            <th>Location</th>
-                            <th>Type</th>
-                            <th>Duration</th>
-                            <th>Date</th>
+                            <th>Image</th>
+                            <th>Paket Travel</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -37,20 +34,20 @@
                         @php
                         $i = 1;
                     @endphp
-                    @forelse ($travel as $row)
+                    @forelse ($gallery as $row)
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td>{{ $row->title }}</td>
-                        <td>{{ $row->location }}</td>
-                        <td>{{ $row->type }}</td>
-                        <td>{{ $row->duration }}</td>
-                        <td>{{ $row->date }}</td>
+                        <td>{{ $row->travel_package->title }}</td>
                         <td>
-                            <a href="{{ route('paket.edit' , $row->id) }}" class="btn btn-info btn-sm">
+                            <img src="{{ asset('storage/'.$row->image) }}" alt="" class="img-thumb" style="width: 50px;">
+                        </td>
+                        
+                        <td>
+                            <a href="{{ route('gallery.edit' , $row->id) }}" class="btn btn-info btn-sm">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
 
-                            <form action="{{ route('paket.destroy', $row->id) }}" method="post" class="d-inline" confirmed>
+                            <form action="{{ route('gallery.destroy', $row->id) }}" method="post" class="d-inline" confirmed>
                                 @csrf
                                 @method('delete')
 

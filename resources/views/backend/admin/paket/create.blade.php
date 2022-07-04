@@ -46,9 +46,7 @@
                   <div class="form-group row">
                     <label for="about" class="col-sm-2 col-form-label">Deskripsi</label>
                     <div class="col-sm-6">
-                        <textarea name="about" id="about" cols="30" rows="3" class="d-block w-100 form-control">
-                             {{ old('about') }}
-                        </textarea>
+                        <textarea name="about" id="about" cols="30" rows="3" class="d-block w-100 form-control">{{ old('about') }}</textarea>
                     </div>
                   </div>
                   <div class="form-group row">
@@ -94,7 +92,7 @@
                     </div>
                   </div>
     
-                  <button type="submit" class="btn-primary btn-block">
+                  <button type="submit" class="btn-primary btn-block" style="border-radius: 20px;">
                       Tambahkan
                   </button>
               </form>

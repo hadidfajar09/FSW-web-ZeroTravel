@@ -4,19 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class TravelPackage extends Model
+class TransactionDetail extends Model
 {
     use HasFactory;
 
     use SoftDeletes;
 
+    protected $table = 'transaction_details';
+
     protected $guarded = [];
 
-    public function galleries()
+
+    public function transaction()
     {
-        return $this->hasMany(Gallery::class,'travel_packages_id','id');
+        return $this->hasMany(BelongsTo::class, 'transaction_id', 'id');
     }
 
 }

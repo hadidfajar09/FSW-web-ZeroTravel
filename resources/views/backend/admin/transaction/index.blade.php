@@ -1,7 +1,7 @@
 @extends('backend.master.admin')
 
 @section('title')
-    Paket Travel
+    Transaksi
 @endsection
 
 @section('content')
@@ -9,9 +9,8 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Paket Travel</h1>
-        <a href="{{ route('paket.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-plus fa-sm text-white-50"></i> Tambah</a>
+        <h1 class="h3 mb-0 text-gray-800">Transaksi</h1>
+       
     </div>
 
     <!-- Content Row -->
@@ -24,11 +23,11 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Title</th>
-                            <th>Location</th>
-                            <th>Type</th>
-                            <th>Duration</th>
-                            <th>Date</th>
+                            <th>Paket Travel</th>
+                            <th>User</th>
+                            <th>VISA</th>
+                            <th>Total</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -37,20 +36,25 @@
                         @php
                         $i = 1;
                     @endphp
-                    @forelse ($travel as $row)
+                    @forelse ($transaction as $row)
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td>{{ $row->title }}</td>
-                        <td>{{ $row->location }}</td>
-                        <td>{{ $row->type }}</td>
-                        <td>{{ $row->duration }}</td>
-                        <td>{{ $row->date }}</td>
+                        <td>{{ $row->travel_package->title }}</td>
+                        <td>{{ $row->user->name }}</td>
+                        <td>{{ $row->additional_visa }}</td>
+                        <td>{{ $row->transactin_total }}</td>
+                        <td>{{ $row->status }}</td>
+                        
                         <td>
-                            <a href="{{ route('paket.edit' , $row->id) }}" class="btn btn-info btn-sm">
+
+                            <a href="{{ route('transaksi.show' , $row->id) }}" class="btn btn-warning btn-sm">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="{{ route('transaksi.edit' , $row->id) }}" class="btn btn-info btn-sm">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
 
-                            <form action="{{ route('paket.destroy', $row->id) }}" method="post" class="d-inline" confirmed>
+                            <form action="{{ route('transaksi.destroy', $row->id) }}" method="post" class="d-inline" confirmed>
                                 @csrf
                                 @method('delete')
 

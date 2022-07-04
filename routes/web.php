@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\TravelController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DetailController;
@@ -46,6 +48,25 @@ Route::prefix('admin')
            Route::get('/paket-travel/edit/{id}', [TravelController::class, 'edit'])->name('paket.edit');
            Route::put('/paket-travel/update/{id}', [TravelController::class, 'update'])->name('paket.update');
            Route::delete('/paket-travel/destroy/{id}', [TravelController::class, 'destroy'])->name('paket.destroy');
+
+
+             //galeri
+             Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+             Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
+             Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
+             Route::get('/gallery/edit/{id}', [GalleryController::class, 'edit'])->name('gallery.edit');
+             Route::put('/gallery/update/{id}', [GalleryController::class, 'update'])->name('gallery.update');
+             Route::delete('/gallery/destroy/{id}', [GalleryController::class, 'destroy'])->name('gallery.destroy');
+
+               //transaksi
+               Route::get('/transaksi', [TransactionController::class, 'index'])->name('transaksi.index');
+               Route::get('/transaksi/create', [TransactionController::class, 'create'])->name('transaksi.create');
+               Route::post('/transaksi/store', [TransactionController::class, 'store'])->name('transaksi.store');
+               Route::get('/transaksi/edit/{id}', [TransactionController::class, 'edit'])->name('transaksi.edit');
+               Route::get('/transaksi/show/{id}', [TransactionController::class, 'show'])->name('transaksi.show');
+               Route::put('/transaksi/update/{id}', [TransactionController::class, 'update'])->name('transaksi.update');
+               Route::delete('/transaksi/destroy/{id}', [TransactionController::class, 'destroy'])->name('transaksi.destroy');
+  
 
          // Route::resource('travel', TravelController::class);
         });
