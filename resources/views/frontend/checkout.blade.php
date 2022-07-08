@@ -34,8 +34,21 @@
             <div class="row">
               <div class="col-lg-8 pl-lg-3">
                   <div class="card card-details">
+                      
+                   @if ($errors->any())
+                   <div class="alert alert-danger">
+                       <ul>
+                           @foreach ($errors->all() as $error)
+                               <li>
+                                   {{ $error }}
+                               </li>
+                           @endforeach
+                       </ul>
+                   </div>
+               @endif
+
                       <h1>Siapa saja yang pergi?</h1>
-                      <p>Trip To Tabaria Indonesia</p>
+                      <p>Trip To {{ $transaksi->travel_package->title }}, {{ $transaksi->travel_package->location }}</p>
                       
                    <div class="attendance">
                        <table class="table table-responsive-sm text-center">
@@ -50,71 +63,64 @@
                                </tr>
                            </thead>
                            <tbody>
-                               <tr>
-                                   <td>
-                                       <img src="{{ asset('frontend/images/user_pic.jpg') }}" alt="" width="40%">
-                                   </td>
-                                   <td class="align-middle">
-                                      Hadiid Fajar
-                                   </td>
-                                   <td class="align-middle">
-                                      Makassar
-                                   </td>
-                                   <td class="align-middle">
-                                      N/A
-                                   </td>
-                                   <td class="align-middle">
-                                      Active
-                                   </td>
-                                   <td class="align-middle">  
-                                       <a href="">
-                                           <img src="frontend/images/ic_remove.png" alt="">
-                                       </a>
-                                   </td>
-                               </tr>
-                               <tr>
-                                  <td>
-                                      <img src="frontend/images/user_pic.jpg" alt="" width="40%">
-                                  </td>
-                                  <td class="align-middle">
-                                     Hadiid Fajar
-                                  </td>
-                                  <td class="align-middle">
-                                     Makassar
-                                  </td>
-                                  <td class="align-middle">
-                                     N/A
-                                  </td>
-                                  <td class="align-middle">
-                                     Active
-                                  </td>
-                                  <td class="align-middle">  
-                                      <a href="">
-                                          <img src="frontend/images/ic_remove.png" alt="">
-                                      </a>
-                                  </td>
-                              </tr>
+                            @forelse ($transaksi->detail as $row)
+                            <tr>
+                                <td>
+                                    <img src="https://ui-avatars.com/api/?name={{ $row->username }}" alt="" width="40%" class="rounded-circle">
+                                </td>
+                                <td class="align-middle">
+                                   {{ $row->username }}
+                                </td>
+                                <td class="align-middle">
+                                 {{ $row->nationality }}
+                                </td>
+                                <td class="align-middle">
+                                   {{ $row->is_visa ? '30 Hari' : 'N/A' }}
+                                </td>
+                                <td class="align-middle">
+                                   {{ \Carbon\Carbon::create($row->passport) > \Carbon\Carbon::now() ? 'Active' : 'InActive'}}
+                                </td>
+                                <td class="align-middle">  
+                                    <a href="{{ route('checkout.remove', $row->id) }}">
+                                        <img src="{{ asset('frontend/images/ic_remove.png') }}" alt="">
+                                    </a>
+                                </td>
+                            </tr>
+                            @empty
+                            <tr>
+                                <td colspan="6" class="text-center">
+                                    No Visitor
+                                </td>
+                            </tr>
+                            @endforelse
+                              
+
                                
                            </tbody>
                        </table>
                    </div>
 
+
                    <div class="member mt-3">
                        <h2>Add Member</h2>
-                       <form action="" class="form-inline">
-                           <label for="inputUsername" class="sr-only">Name</label>
-                           <input name="inputUsername" type="text" class="form-control mb-2 mr-sm-2" id="inputUsername" placeholder="Username">
+                       <form action="{{ route('checkout.create', $transaksi->id) }}" method="post" class="form-inline">
+                        @csrf
+                           <label for="username" class="sr-only">Name</label>
+                           <input name="username" type="text" class="form-control mb-2 mr-sm-2" value="{{ old('username') }}" id="username" placeholder="Username" required>
 
-                           <label for="inputVisa" class="sr-only">VISA</label>
-                          <select name="inputVisa" id="inputVisa" class="form-control mb-2 mr-sm-2">
-                            <option value="VISA" selected >VISA</option>
-                            <option value="30 Days">30 Hari</option>
-                            <option value="N/A">N/A</option>
+                           <label for="nationality" class="sr-only">Nationality</label>
+                           <input name="nationality" type="text" class="form-control mb-2 mr-sm-2" value="{{ old('nationality') }}" style="width: 80px;" id="nationality" placeholder="nationality" required>
+
+                           <label for="is_visa" class="sr-only">VISA</label>
+                          <select name="is_visa" id="is_visa" class="form-control mb-2 mr-sm-2" value="{{ old('is_visa') }}" required>
+                            <option value="" selected >VISA</option>
+                            <option value="1">30 Hari</option>
+                            <option value="0">N/A</option>
                           </select>
 
                           <label for="inputPassport" class="sr-only">Passport</label>
-                          <div class="input-group mb-2 ">
-                              <input type="text" class="form-control datepicker" id="datepicker" placeholder="Passport">
+                          <div class="input-group mb-2 " style="width: 150px;">
+                              <input type="text" name="passport" class="form-control datepicker" id="datepicker" placeholder="Passport" value="{{ old('passport') }}" required>
                           </div>
 
                           <button type="submit" class="btn btn-add-now mb-2 px-4">
@@ -137,23 +143,23 @@
                       <table class="checkout-informasi">
                           <tr>
                               <th width="50%">Members</th>
-                              <td width="50%" class="text-right">2 Orang</td>
+                              <td width="50%" class="text-right">{{ $transaksi->detail->count() }}</td>
                           </tr>
                           <tr>
                               <th width="50%">Additional VISA</th>
-                              <td width="50%" class="text-right">Rp. 150.000</td>
+                              <td width="50%" class="text-right">Rp. {{ $transaksi->additional_visa }}</td>
                           </tr>
                            <tr>
                               <th width="50%">Trip Price</th>
-                              <td width="50%" class="text-right">Rp 50 juta/Person</td>
+                              <td width="50%" class="text-right">Rp {{ $transaksi->travel_package->price }} / Orang</td>
                            </tr>
                              <tr>
                               <th width="50%">Sub Total</th>
-                              <td width="50%" class="text-right">Rp. 22 juta</td>
+                              <td width="50%" class="text-right">Rp. {{ $transaksi->transactin_total }}</td>
                              </tr>
                              <tr>
                               <th width="50%">Total(+Unique Code)</th>
-                              <td width="50%" class="text-right"><span class="harga"> Rp. 21 juta</span></td>
+                              <td width="50%" class="text-right"><span class="harga">Rp. {{ $transaksi->transactin_total . mt_rand(0,99) }}</span></td>
                              </tr>
                               
                           
@@ -166,7 +172,7 @@
 
                            <div class="bank">
                                <div class="item-bank">
-                                   <img src="frontend/images/ic_bank.png" alt="" class="bank-image">
+                                   <img src="{{ asset('frontend/images/ic_bank.png') }}" alt="" class="bank-image">
                                    <div class="description">
                                       <h3>PT. ZeroShop</h3>
                                       <p>0881 8829 8800 <br>
@@ -177,7 +183,7 @@
                                </div>
 
                                <div class="item-bank">
-                                  <img src="frontend/images/ic_bank.png" alt="" class="bank-image">
+                                  <img src="{{ asset('frontend/images/ic_bank.png') }}" alt="" class="bank-image">
                                   <div class="description">
                                      <h3>PT. ZeroShop</h3>
                                      <p>0881 8829 8800 <br>
@@ -191,13 +197,13 @@
 
                   </div>
                   <div class="join-container">
-                      <a href="{{ route('checkout.success') }}" class="btn btn-block btn-join-now mt-3 py-2">
+                      <a href="{{ route('checkout.success', $transaksi->id) }}" class="btn btn-block btn-join-now mt-3 py-2">
                           Saya Sudah Bayar
                       </a>
                   </div>
 
                   <div class="text-center mt-3">
-                        <a href="{{ route('detail') }}" class="text-muted">Cancel Booking</a>
+                        <a href="{{ route('detail', $transaksi->travel_package->slug) }}" class="text-muted">Cancel Booking</a>
                   </div>
               </div>
           </div>
@@ -215,9 +221,10 @@
 
 <script>
        $('#datepicker').datepicker({
+           format: 'yyyy-mm-dd',
            uiLibrary: 'bootstrap4',
            icons: {
-               rightIcon: '<img src="frontend/images/ic_doe.png" />'
+               rightIcon: '<img src="{{ asset('frontend/images/ic_doe.png') }}" />'
            }
        });
 

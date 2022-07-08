@@ -1,7 +1,7 @@
    <!-- Navbar -->
    <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="/index.html"><img src="frontend/images/logo-glasstea.png" alt="logo"></a>
+        <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('frontend/images/logo-glasstea.png') }}" alt="logo"></a>
         <button class="navbar-toggler navbar-toggler-right" type="button"  data-toggle="collapse" data-target="#navb">
 <span class="navbar-toggler-icon">
 </span>

@@ -1,0 +1,11 @@
+<mjml>
+  <mj-body background-color="#E4E6E8" font-size="13px">
+    <mj-section background-color="#ffffff" vertical-align="top" padding-bottom="0px" padding-top="0px" border-bottom="1px dashed #eee">
+      <mj-column width="100%" vertical-align="top">
+        <mj-image width="100px" src="https://mjml.io/assets/img/logo-small.png"></mj-image>
+        <mj-divider border-color="#F45E43"></mj-divider>
+        <mj-text font-size="30px" color="#F45E43" font-family="helvetica">Tester</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

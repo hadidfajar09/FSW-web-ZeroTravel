@@ -14,7 +14,7 @@
     <p class="mt-3">You will see beautiful <br>
         moment you never see before</p>
 
-        <a href="" class="btn btn-get-started px-4 mt-4">Get Started</a>
+        <a href="#popular" class="btn btn-get-started px-4 mt-4">Get Started</a>
 </header>
 
 <main>
@@ -54,61 +54,26 @@
     <section class="section-populer-content" id="content-populer">
         <div class="container">
             <div class="section-populer-travel row justify-content-center">
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card-travel text-center d-flex flex-column" style="background-image: url('frontend/images/overlay.jpg');">
-                        <div class="travel-country">
-                            INDONESIA
-                        </div>
-                        <div class="travel-location">
-                            TABARIA, MAKASSAR
-                        </div>
-                        <div class="travel-button mt-auto">
-                            <a href="{{ route('detail') }}" class="btn btn-travel-details px-4">View Details</a>
-                        </div>
-                    </div>
-                </div>
 
+                @foreach ($travel as $row)
+                    
+                
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card-travel text-center d-flex flex-column" style="background-image: url('frontend/images/overlay.jpg');">
+                    <div class="card-travel text-center d-flex flex-column" style="background-image: url('{{ $row->galleries->count() ? 'storage/'.$row->galleries->first()->image : '' }}');">
                         <div class="travel-country">
-                            INDONESIA
+                            {{ $row->location }}
+                            
                         </div>
                         <div class="travel-location">
-                            TABARIA, MAKASSAR
+                            {{ $row->title }}
                         </div>
                         <div class="travel-button mt-auto">
-                            <a href="{{ route('detail') }}" class="btn btn-travel-details px-4">View Details</a>
+                            <a href="{{ route('detail', $row->slug) }}" class="btn btn-travel-details px-4">View Details</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card-travel text-center d-flex flex-column" style="background-image: url('frontend/images/overlay.jpg');">
-                        <div class="travel-country">
-                            INDONESIA
-                        </div>
-                        <div class="travel-location">
-                            TABARIA, MAKASSAR
-                        </div>
-                        <div class="travel-button mt-auto">
-                            <a href="{{ route('detail') }}" class="btn btn-travel-details px-4">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card-travel text-center d-flex flex-column" style="background-image: url('frontend/images/overlay.jpg');">
-                        <div class="travel-country">
-                            INDONESIA
-                        </div>
-                        <div class="travel-location">
-                            TABARIA, MAKASSAR
-                        </div>
-                        <div class="travel-button mt-auto">
-                            <a href="{{ route('detail') }}" class="btn btn-travel-details px-4">View Details</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+              
             </div>
         </div>
     </section>
@@ -204,7 +169,7 @@
                 <div class="col-12 text-center">
                     <a href="" class="btn btn-need-help px-4 mt-4 mx-1">I Need Help</a>
 
-                    <a href="" class="btn btn-started px-4 mt-4 mx-1">I Get Started</a>
+                    <a href="{{ route('register') }}" class="btn btn-started px-4 mt-4 mx-1">I Get Started</a>
                 </div>
             </div>
         </div>

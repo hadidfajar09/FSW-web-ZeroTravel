@@ -1,7 +1,7 @@
 @extends('frontend.master.master')
 
 @section('title')
-    Paket Travel
+     {{ $detail->title }}
 @endsection
 
 
@@ -34,58 +34,47 @@
                 <div class="row">
                   <div class="col-lg-8 pl-lg-3">
                       <div class="card card-details">
-                          <h1>Toko Fajarnet</h1>
-                          <p>BTN Tabaria Blok E8</p>
+                          <h1>{{ $detail->title }}</h1>
+                          <p>{{ $detail->location }}</p>
                           <div class="gallery">
                               <div class="xzoom-container">
-                                  <img src="frontend/images/Mask Group 4.png" alt="" class="xzoom" id="xzoom-default" xoriginal="frontend/images/Mask Group 4.png">
+                                  <img src="{{ asset('storage/'.$detail->galleries->first()->image) }}" alt="" width="12" class="xzoom" id="xzoom-default" xoriginal="{{ asset('storage/'.$detail->galleries->first()->image) }}">
                               </div>
                               <div class="xzoom-thumbs">
-                                  <a href="frontend/images/Mask Group 4.png">
-                                      <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" alt="" width="125" xpreview="frontend/images/Mask Group 4.png">
+                                  @foreach ($image as $row)
+                                  <a href="{{ asset('storage/'.$row->image) }}">
+                                      <img src="{{ asset('storage/'.$row->image) }}" class="xzoom-gallery" alt="" width="125" height="70" xpreview="{{ asset('storage/'.$row->image) }}">
                                   </a>
-                                  <a href="frontend/images/Mask Group 4.png">
-                                      <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" alt="" width="125" xpreview="frontend/images/Mask Group 4.png">
-                                  </a>  
-                                  <a href="frontend/images/Mask Group 4.png">
-                                      <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" alt="" width="125" xpreview="frontend/images/Mask Group 4.png">
-                                  </a>  
-                                  <a href="frontend/images/Mask Group 4.png">
-                                      <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" alt="" width="125" xpreview="frontend/images/Mask Group 4.png">
-                                  </a> 
-                                  <a href="frontend/images/Mask Group 4.png">
-                                      <img src="frontend/images/Mask Group 4.png" class="xzoom-gallery" alt="" width="125" xpreview="frontend/images/Mask Group 4.png">
-                                  </a> 
+
+                                  @endforeach
+                                 
                               </div>
                           </div>
-                          <h2>Tentang Wisata</h2>
+                          <h2>Deskripsi Paket</h2>
                           <p>
-                            Nusa Penida is an island southeast of Indonesias island Bali and a district of Klungkung 
-                            Regency that includes the neighbouring small island of Nusa Lembongan. The Badung 
-                            Strait separates the island and Bali. The interior of Nusa Penida is hilly with a maximum 
-                            altitude of 524 metres. It is drier than the nearby island of Bali.
+                           {!! $detail->title !!}
                           </p>
                           <p>Bali and a district of Klungkung Regency that includes the neighbouring small island of 
                             Nusa Lembongan. The Badung Strait separates the island and Bali.</p>
                           <div class="features row">
                               <div class="col-md-4">
-                                  <img src="frontend/images/ic_event.png" alt="" class="featured-image">
+                                  <img src="{{ asset('frontend/images/ic_event.png') }}" alt="" class="featured-image">
                                   <div class="description">
                                       <h3>Acara Adat</h3>
-                                      <p>Tari Kecak</p>
+                                      <p>{{ $detail->event }}</p>
                                   </div>
                               </div>
                               <div class="col-md-4 border-left">
-                                  <img src="frontend/images/ic_language.png" alt="" class="featured-image">
+                                  <img src="{{ asset('frontend/images/ic_language.png') }}" alt="" class="featured-image">
                                 <div class="description">
                                     <h3>Bahasa</h3>
-                                    <p>Bahasa Mangkasarak</p>
+                                    <p>{{ $detail->lang }}</p>
                                 </div>
                             </div><div class="col-md-4 border-left">
-                                <img src="frontend/images/ic_foods.png" alt="" class="featured-image">
+                                <img src="{{ asset('frontend/images/ic_foods.png') }}" alt="" class="featured-image">
                                 <div class="description">
                                     <h3>Makanan</h3>
-                                    <p>Coto Makassar</p>
+                                    <p>{{ $detail->food }}</p>
                                 </div>
                             </div>
                           </div>
@@ -95,39 +84,50 @@
                       <div class="card card-details card-right">
                           <h2>Orang yang akan Pergi</h2>
                           <div class="member my-2">
-                              <img src="frontend/images/Mask Group 3.png" class="member-img mr-1" alt="">
-                              <img src="frontend/images/Mask Group 3.png" class="member-img mr-1" alt="">
-                              <img src="frontend/images/Mask Group 3.png" class="member-img mr-1" alt="">
-                              <img src="frontend/images/Mask Group 3.png" class="member-img mr-1" alt="">
-                              <img src="frontend/images/Group 6.png" class="member-img mr-1" alt="">
+                              <img src="{{ asset('frontend/images/Mask Group 3.png') }}" class="member-img mr-1" alt="">
+                              <img src="{{ asset('frontend/images/Mask Group 3.png') }}" class="member-img mr-1" alt="">
+                              <img src="{{ asset('frontend/images/Mask Group 3.png') }}" class="member-img mr-1" alt="">
+                              <img src="{{ asset('frontend/images/Mask Group 3.png') }}" class="member-img mr-1" alt="">
+                              <img src="{{ asset('frontend/images/Group 6.png') }}" class="member-img mr-1" alt="">
                           </div>
                           <hr>
                           <h2>Informasi Perjalanan</h2>
                           <table class="trip-informasi">
                               <tr>
                                   <th width="50%">Date Of Departure</th>
-                                  <td width="50%" class="text-right">22-Des-2022</td>
+                                  <td width="50%" class="text-right">{{\Carbon\Carbon::create($detail->date)->format('n F, Y') }}</td>
                               </tr>
                               <tr>
                                   <th width="50%">Duration</th>
-                                  <td width="50%" class="text-right">5 Hari</td>
+                                  <td width="50%" class="text-right">{{ $detail->duration }}</td>
                               </tr>
                                <tr>
                                   <th width="50%">Type</th>
-                                  <td width="50%" class="text-right">Transfer</td>
+                                  <td width="50%" class="text-right">{{ $detail->type }}</td>
                                </tr>
                                  <tr>
                                   <th width="50%">Price List</th>
-                                  <td width="50%" class="text-right">Rp. 22 juta</td>
+                                  <td width="50%" class="text-right">Rp. {{ $detail->price }}</td>
                                  </tr>
                                   
                               
                           </table>
                       </div>
                       <div class="join-container">
-                          <a href="{{ route('checkout') }}" class="btn btn-block btn-join-now mt-3 py-2">
-                              Join Now
-                          </a>
+
+                        @auth
+                            <form action="{{ route('checkout.process', $detail->id) }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-block btn-join-now mt-3 py-2">Join Now</button>
+                            </form>
+                        @endauth
+
+                        @guest
+                        <a href="{{ route('login') }}" class="btn btn-block btn-join-now mt-3 py-2">
+                            Login Atau Daftar terlebih dahulu
+                        </a>
+                        @endguest
+                         
                       </div>
                   </div>
               </div>

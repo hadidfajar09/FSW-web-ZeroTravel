@@ -18,7 +18,7 @@ class TransactionController extends Controller
     public function index()
     {
 
-        $transaction = Transaction::with(['detail','travel_package','user'])->get();
+        $transaction = Transaction::with(['detail','travel_package','user'])->orderBy('id','desc')->get();
 
         // return $transaction;
 
@@ -114,8 +114,6 @@ class TransactionController extends Controller
         }
 
         $transaction->delete();
-
-
 
         return redirect()->back();
     }
