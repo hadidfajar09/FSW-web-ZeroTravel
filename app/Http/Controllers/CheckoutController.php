@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TransaksiSuccess;
 use App\Models\Transaction;
 use App\Models\TransactionDetail;
 use App\Models\TravelPackage;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -90,11 +92,19 @@ class CheckoutController extends Controller
 
     public function success($id)
     {
-        $transaksi = Transaction::findOrFail($id);
+        $transaksi = Transaction::with('travel_package.galleries','user','detail')->findOrFail($id);
 
         $transaksi->status = 'PENDING';
 
         $transaksi->update();
+
+
+        // return $transaksi;
+
+        Mail::to($transaksi->user)->send(
+            new TransaksiSuccess($transaksi)
+        );
+
 
         return view('frontend.success');
     }

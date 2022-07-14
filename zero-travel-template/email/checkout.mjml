@@ -1,11 +1,111 @@
 <mjml>
-  <mj-body background-color="#E4E6E8" font-size="13px">
-    <mj-section background-color="#ffffff" vertical-align="top" padding-bottom="0px" padding-top="0px" border-bottom="1px dashed #eee">
+  <mj-body background-color="#E4E6E8">
+    <mj-section background-color="#ffffff"  padding-bottom="0px" padding-top="0px" border-bottom="1px dashed #4bad4e">
       <mj-column width="100%" vertical-align="top">
-        <mj-image width="100px" src="https://mjml.io/assets/img/logo-small.png"></mj-image>
-        <mj-divider border-color="#F45E43"></mj-divider>
-        <mj-text font-size="30px" color="#F45E43" font-family="helvetica">Tester</mj-text>
+        <mj-image width="130px" src="../frontend/images/logo-glasstea.png" border="none" align="center" padding-right="0px" padding-left="0px" padding-bottom="25px" padding-top="30px"></mj-image>
+       
+   </mj-column>
+    </mj-section>
+
+     <mj-section background-color="#ffffff"  padding-bottom="0px" padding-top="0px" >
+      <mj-column width="100%" vertical-align="top">
+            <mj-text font-size="30px" color="#4bad4e" align="center" font-family="Playfair Display" font-weight="bold" padding-top="30px" padding-bottom="20px" padding-left="20px" padding-right="20px">Cetak E-Ticket Anda!</mj-text>
+   </mj-column>
+    </mj-section>
+
+
+    <mj-section background-color="#ffffff"  padding-bottom="0px" padding-top="0px">
+      <mj-column width="100%" vertical-align="top">
+        <mj-image width="550px" src="../frontend/images/nusa_penida.jpg" border="none" align="center" padding-right="0px" padding-left="0px" padding-bottom="0px" padding-top="0px"></mj-image>
+       
+   </mj-column>
+    </mj-section>
+
+ <mj-section background-color="#ffffff" padding-bottom="20px" padding-top="20px" >
+      <mj-column width="100%" vertical-align="middle" border-bottom="1px dashed #4bad4e" padding-bottom="30px">
+            <mj-text font-size="18px" line-height="25px" color="#4bad4e" align="left" font-family="Playfair Display"  padding-left="25px" padding-right="25px" padding-top="10px">
+            Hi, Zeronine 
+            <br><br>
+            Tiket Digital kamu sudah berhasil dicetak 
+            <br> 
+            Booking ID : 
+            <strong>#0909090</strong>
+            </mj-text>
+
+ <mj-table color="#4bad4e" font-size="16px" line-height="28px" font-family="Assistant, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px">
+          <tr>
+            <td colspan="3">Members</td>
+          </tr>
+          <tr>
+            <td><strong>Angga Risky</strong></td>
+            <td style="text-align: right;">Singapore, SG</td>
+          </tr>
+          <tr>
+            <td><strong>Galih Pratama</strong></td>
+            <td style="text-align: right;">Singapore, SG</td>
+          </tr>
+        </mj-table>
+
+        <mj-table color="#4bad4e" font-size="16px" line-height="28px" font-family="Assistant, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px">
+          <tr>
+            <td colspan="3">Travel Details</td>
+          </tr>
+          <tr>
+            <td><strong>Departure</strong></td>
+            <td style="text-align: right;">Nusa Penida</td>
+          </tr>
+          <tr>
+            <td><strong>Date and Time</strong></td>
+            <td style="text-align: right;">Thu, 20 Jan, 2019</td>
+          </tr>
+        </mj-table>
+
+  <mj-button align="center" font-size="18px" background-color="#FF9E53" border-radius="10px" color="#fff" font-family="Assistant, Helvetica, Arial, sanf-serif">
+          Check Detail
+        </mj-button>
+
+   </mj-column>
+    </mj-section>
+
+
+     <mj-section background-color="#ffffff" padding-bottom="0px" padding-top="0px">
+      <mj-column vertical-align="middle" width="100%">
+        <mj-text align="left" color="#4bad4e" font-size="18px" line-height="20px" font-family="Assistant, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px">
+          Butuh Bantuan?
+        </mj-text>
       </mj-column>
     </mj-section>
+
+
+    <mj-section background-color="#ffffff" padding-bottom="20px" padding-top="0px">
+      <mj-column>
+        <mj-table>
+          <tr>
+            <td style="width: 50px;">
+              <img src="../frontend/images/ic_mail.png" width="50px">
+            </td>
+            <td style="font-size: 18px; padding-left: 10px; color: #4bad4e;font-family: Assistant, Helvetica, Arial, sans-serif">
+              support@nomads.id
+              <br>
+              021-2019-2022
+            </td>
+          </tr>
+        </mj-table>
+      </mj-column>
+    </mj-section>
+
+
+    <mj-section padding-bottom="30px" padding-top="3px">
+      <mj-column>
+        <mj-text align="center" color="#4bad4e" font-size="18px" font-family="Assistant, Helvetica, Arial, sanf-serif" padding-left="25px" padding-right="25px" padding-bottom="0px" padding-top="30px">
+          2022 ZeroTravel Copyright All Rights Reserved.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    
+
+
+     
   </mj-body>
 </mjml>
